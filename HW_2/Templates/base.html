@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class='navigation'>
+
+    </nav>
+    <div class="main"> 
+    {% for cat in category %}
+        <li>
+            <a href="{{ url_for(cat.func_name) }}">{{ cat.title }}</a>
+        </li>
+    {% endfor %}
+
+    {% block content %} {% endblock %}
+
+    </div>
+    <footer>
+        <div>
+            <p>2023. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
