@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Register</h1>
-    <form method="POST" action="{{ url_for('register') }}">
+    <h1>Регистрация</h1>
+    <form method="POST" action="{{ url_for('new_register') }}">
         {{ form.csrf_token }}
         {% for field in form if field.name != 'csrf_token' %}
         <p>
@@ -18,7 +18,7 @@
         </p>
         {% endfor %}
         <p>
-            <input class="button-register" type="submit" value="Register">
+            <input class="button-register" type="submit" value="Зарегистрироваться">
         </p>
     </form>
 {% endblock %}
