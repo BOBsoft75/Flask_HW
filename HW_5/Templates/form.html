@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Список пользователей
+{% endblock %}
+
+{% block content %}
+    <h1>Список пользователей</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Имя</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td>{{ user.id_ }}</td>
+                <td>{{ user.name }}</td>
+                <td>{{ user.email }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <hr>
+    <br>
+    <form action="/user/add" method="post">
+        <label for="name">ID:</label><br>
+        <input type="text" id="name" name="id"><br>
+
+        <label for="name">Имя:</label><br>
+        <input type="text" id="name" name="name"><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email"><br>
+
+        <label for="password">Пароль:</label><br>
+        <input type="password" id="password" name="password"><br><br>
+
+        <input type="submit" value="Добавить">
+    </form>
+
+{% endblock %}
